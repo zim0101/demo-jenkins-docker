@@ -16,6 +16,12 @@ pipeline {
             when {
                 branch 'main'
             }
+            agent {
+                docker {
+                    image 'docker:dind'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
+            }
             steps {
                 sh 'pip install .'
                 sh 'pytest'
@@ -25,6 +31,12 @@ pipeline {
         stage('test-2') {
             when {
                 branch 'main'
+            }
+            agent {
+                docker {
+                    image 'docker:dind'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
             }
             steps {
                 sh 'pip install .'
