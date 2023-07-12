@@ -19,18 +19,5 @@ pipeline {
                 }
             }
         }
-        stage('test-2') {
-            when {
-                branch 'main'
-            }
-            steps {
-                script {
-                    docker.image('python:3.11.1').inside {
-                        sh 'pip install .'
-                        sh 'pytest'
-                    }
-                }
-            }
-        }
     }
 }
