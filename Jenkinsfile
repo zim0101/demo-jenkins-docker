@@ -5,6 +5,9 @@ pipeline {
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
+    triggers {
+        githubPush()
+    }
     stages {
         stage('test-1') {
             when {
