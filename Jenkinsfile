@@ -1,11 +1,6 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'docker:dind'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
 
     triggers {
         githubPush()
@@ -16,12 +11,13 @@ pipeline {
             when {
                 branch 'main'
             }
+
             agent {
                 docker {
-                    image 'docker:dind'
-                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                    image 'python:3.9.6'
                 }
             }
+
             steps {
                 sh 'pip install .'
                 sh 'pytest'
@@ -32,12 +28,13 @@ pipeline {
             when {
                 branch 'main'
             }
+
             agent {
                 docker {
-                    image 'docker:dind'
-                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                    image 'python:3.11.1'
                 }
             }
+
             steps {
                 sh 'pip install .'
                 sh 'pytest'
