@@ -8,8 +8,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install .'
-                sh 'pytest'
+                sh 'pip install . --user'
+                sh 'pytest --user'
             }
         }
     }
