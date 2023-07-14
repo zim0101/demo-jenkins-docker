@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                'pip install .'
+                sh 'pip install .'
             }
         }
     }
