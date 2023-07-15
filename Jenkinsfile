@@ -4,10 +4,11 @@ pipeline {
         stage('test-python-3.10.7') {
             agent {
                 docker {
-                    image 'python:3.10.7-alpine'
+                    image 'ubuntu-python:3.10'
                 }
             }
             steps {
+                sh 'id'
                 sh 'pip install .'
             }
         }
