@@ -9,6 +9,7 @@ pipeline {
             }
             steps {
                 sh 'ls -l'
+                sh 'pip install .'
             }
         }
     }
