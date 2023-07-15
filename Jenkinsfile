@@ -8,6 +8,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'whoami'
                 sh 'python3 --version'
                 sh 'pip --version'
                 sh 'sudo -H python3 -m pip install virtualenv'
