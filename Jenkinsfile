@@ -8,7 +8,6 @@ pipeline {
                 }
             }
             steps {
-                sh 'whoami'
                 sh 'ls -l'
             }
         }
