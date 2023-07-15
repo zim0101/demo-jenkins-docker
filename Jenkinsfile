@@ -13,10 +13,10 @@ pipeline {
 //                 sh 'pytest'
 //             }
 //         }
-        stage('test-python-3.9') {
+        stage('test-python:3.11.4') {
             agent {
                 docker {
-                    image 'ubuntu-python:3.9'
+                    image 'ubuntu-python:3.11.4'
                 }
             }
             steps {
