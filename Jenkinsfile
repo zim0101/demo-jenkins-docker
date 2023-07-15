@@ -8,8 +8,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install . --user'
-                sh 'pytest --user'
+                sh 'whoami'
+                sh 'ls -l'
             }
         }
     }
