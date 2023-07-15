@@ -8,11 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'id'
-                sh 'ls -l'
-                sh 'pwd'
-                sh 'python3 --version'
-                sh 'pip --version'
+                sh 'mkdir -m777 /.local /.cache'
                 sh 'pip install .'
             }
         }
