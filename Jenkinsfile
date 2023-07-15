@@ -8,7 +8,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'id'
+                sh 'python3 -m venv env'
+                sh 'source .env/bin/activate'
                 sh 'pip install .'
                 sh 'pytest'
             }
