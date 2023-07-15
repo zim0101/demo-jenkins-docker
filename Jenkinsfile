@@ -8,7 +8,6 @@ pipeline {
                 }
             }
             steps {
-                sh 'mkdir -m777 /.local /.cache'
                 sh 'pip install .'
             }
         }
