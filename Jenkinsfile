@@ -8,9 +8,14 @@ pipeline {
                 }
             }
             steps {
-                sh 'pwd'
-                sh 'ls -l'
-                sh 'pip install .'
+                sh 'python3 --version'
+                sh 'pip --version'
+                sh 'python3 -m pip install --user virtualenv'
+//                 sh 'pwd'
+//                 sh 'ls -l'
+//                 sh 'python3 -m venv env'
+//                 sh ''
+//                 sh 'pip install .'
             }
         }
     }
