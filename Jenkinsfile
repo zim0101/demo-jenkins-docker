@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'id'
                 sh 'pip install .'
+                sh 'pytest'
             }
         }
     }
