@@ -8,9 +8,6 @@ pipeline {
                 }
             }
             steps {
-                sh 'sudo apt install python3.10-venv'
-                sh 'python3 -m venv env'
-                sh 'source .env/bin/activate'
                 sh 'pip install .'
                 sh 'pytest'
             }
