@@ -13,11 +13,7 @@ pipeline {
                 sh 'pwd'
                 sh 'python3 --version'
                 sh 'pip --version'
-//                 sh 'pwd'
-//                 sh 'ls -l'
-//                 sh 'python3 -m venv env'
-//                 sh ''
-//                 sh 'pip install .'
+                sh 'pip install .'
             }
         }
     }
