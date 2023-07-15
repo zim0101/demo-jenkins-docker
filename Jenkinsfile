@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'python3 --version'
                 sh 'pip --version'
-                sh 'python3 -m pip install --user virtualenv'
+                sh 'sudo -H python3 -m pip install virtualenv'
 //                 sh 'pwd'
 //                 sh 'ls -l'
 //                 sh 'python3 -m venv env'
