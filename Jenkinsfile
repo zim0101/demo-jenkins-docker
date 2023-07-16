@@ -1,22 +1,23 @@
 pipeline {
     agent any
     stages {
-        stage('Test Python Versions') {
+        stage('test-python') {
             steps {
                 script {
                     def pythonVersions = ['3.10.7', '3.11.4']
 
                     for (def version in pythonVersions) {
-                        def dockerImage = "ubuntu-python:${version}"
+                        def pythonAgent = "ubuntu-python:${version}"
+                        def pythonCommand = "python${version} --version"
 
                         stage("Test Python ${version}") {
                             agent {
                                 docker {
-                                    image dockerImage
+                                    image pythonAgent
                                 }
                             }
                             steps {
-                                sh 'python3 --version'
+                                sh pythonCommand
                                 sh 'pip install .'
                                 sh 'pytest'
                             }
