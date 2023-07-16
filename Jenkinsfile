@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('test-python') {
+        stage('Test Python') {
             steps {
                 script {
                     def pythonVersions = ['3.10.7', '3.11.4']
