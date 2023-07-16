@@ -17,9 +17,11 @@ pipeline {
                                 }
                             }
                             steps {
-                                echo pythonCommand
-                                sh 'pip install .'
-                                sh 'pytest'
+                                script {
+                                    echo pythonCommand
+                                    sh 'pip install .'
+                                    sh 'pytest'
+                                }
                             }
                         }
                     }
