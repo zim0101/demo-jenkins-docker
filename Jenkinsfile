@@ -1,24 +1,26 @@
-def pythonVersions = ["3.10.7", "3.11.4"]
-
-def testStage(String pythonVersion) {
-    stage("test-python-${pythonVersion}") {
-        steps {
-            echo "Running tests for Python ${pythonVersion}"
-            sh 'python3 --version'
-            sh 'pip install .'
-            sh 'pytest'
-        }
-    }
-}
-
 pipeline {
     agent any
     stages {
         stage('Test Python Versions') {
             steps {
                 script {
-                    for (def pythonVersion in pythonVersions) {
-                        build testStage(pythonVersion)
+                    def pythonVersions = ['3.10.7', '3.11.4']
+
+                    for (def version in pythonVersions) {
+                        def dockerImage = "ubuntu-python:${version}"
+
+                        stage("Test Python ${version}") {
+                            agent {
+                                docker {
+                                    image dockerImage
+                                }
+                            }
+                            steps {
+                                sh 'python3 --version'
+                                sh 'pip install .'
+                                sh 'pytest'
+                            }
+                        }
                     }
                 }
             }
