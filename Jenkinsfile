@@ -8,9 +8,11 @@ def testStage(String pythonVersion) {
             }
         }
         steps {
-            sh 'python3 --version'
-            sh 'pip install .'
-            sh 'pytest'
+            script {
+                sh 'python3 --version'
+                sh 'pip install .'
+                sh 'pytest'
+            }
         }
     }
 }
