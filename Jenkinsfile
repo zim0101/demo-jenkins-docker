@@ -10,7 +10,7 @@ pipeline {
         stage('test-on-multi-python-version') {
             steps {
                 script {
-                    def pythonVersions = ['3.10', '3.11.4']
+                    def pythonVersions = ['3.10.7', '3.11.4']
                     pythonVersions.each { version ->
                         stage("test-python-${version}") {
                             agent {
