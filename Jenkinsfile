@@ -17,7 +17,7 @@ pipeline {
                                 }
                             }
                             steps {
-                                sh pythonCommand
+                                echo pythonCommand
                                 sh 'pip install .'
                                 sh 'pytest'
                             }
@@ -28,6 +28,7 @@ pipeline {
         }
     }
 }
+
 
 
 // pipeline {
