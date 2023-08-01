@@ -1,3 +1,3 @@
 @Library('demo-jenkins-shared-library') _
 
-runPythonTest pipeline:'PYTHO'
+runPythonTest pipeline:'PYTHON'
