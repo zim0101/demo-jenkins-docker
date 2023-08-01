@@ -1,3 +1,5 @@
+@Library('demo-jenkins-shared-library') _
+
 pipeline {
 
     agent any
@@ -12,9 +14,7 @@ pipeline {
                             for (def item : items) {
                                 docker.image(item).inside {
                                     stage("Processing ${item}") {
-                                        sh 'python3 --version'
-                                        sh 'pip install .'
-                                        sh 'pytest'
+                                        runPythonTest()
                                     }
                                 }
                             }
